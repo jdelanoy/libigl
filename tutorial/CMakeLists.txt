@@ -7,6 +7,7 @@ option(LIBIGL_WITH_VIEWER      "Use OpenGL viewer"  ON)
 option(LIBIGL_WITH_NANOGUI     "Use Nanogui menu"   ON)
 
 ### libIGL options: choose your dependencies (by default everything is OFF, in this example we need the viewer) ###
+option(LIBIGL_WITH_ANTTWEAKBAR      "Use AntTweakBar"    OFF)
 option(LIBIGL_WITH_BBW              "Use BBW"            OFF)
 find_package(CGAL QUIET)
 option(LIBIGL_WITH_CGAL             "Use CGAL"           "${CGAL_FOUND}")
