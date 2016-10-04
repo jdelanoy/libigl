@@ -100,7 +100,13 @@ endif()
 
 ### Compile the AntTweakBar part ###
 if(LIBIGL_WITH_ANTTWEAKBAR)
-  set(ANTTWEAKBAR_DIR "${LIBIGL_EXTERNAL}/anttweakbar")
+  set(ANTTWEAKBAR_DIR "${LIBIGL_EXTERNAL}/AntTweakBar")
+  # file(GLOB ANTTWEAKBAR_C_SRC_FILES
+  #   "${ANTTWEAKBAR_DIR}/src/*.c"
+  #   )
+  # file(GLOB ANTTWEAKBAR_CPP_SRC_FILES
+  #   "${ANTTWEAKBAR_DIR}/src/*.cpp"
+  #   )
   set(ANTTWEAKBAR_INCLUDE_DIR "${ANTTWEAKBAR_DIR}/include")
   set(ANTTWEAKBAR_C_SRC_FILES
     "${ANTTWEAKBAR_DIR}/src/TwEventGLFW.c"
@@ -128,12 +134,14 @@ if(LIBIGL_WITH_ANTTWEAKBAR)
     #"${ANTTWEAKBAR_DIR}/src/TwDirect3D10.cpp"
     #"${ANTTWEAKBAR_DIR}/src/TwDirect3D11.cpp"
     #"${ANTTWEAKBAR_DIR}/src/TwDirect3D9.cpp"
+
   list(
     APPEND
     ANTTWEAKBAR_SRC_FILES
-    "${ANTTWEAKBAR_C_SRC_FILES}"
-    "${ANTTWEAKBAR_CPP_SRC_FILES}")
-  add_library(AntTweakBar STATIC "${ANTTWEAKBAR_SRC_FILES}")
+    ${ANTTWEAKBAR_C_SRC_FILES}
+    ${ANTTWEAKBAR_CPP_SRC_FILES}
+    )
+  add_library(AntTweakBar STATIC ${ANTTWEAKBAR_SRC_FILES})
   target_include_directories(AntTweakBar PUBLIC "${ANTTWEAKBAR_INCLUDE_DIR}")
   if(APPLE)
     set_target_properties(
@@ -143,6 +151,10 @@ if(LIBIGL_WITH_ANTTWEAKBAR)
       "-fPIC -fno-strict-aliasing -x objective-c++")
     target_compile_definitions(
       AntTweakBar PUBLIC _MACOSX __PLACEMENT_NEW_INLINE)
+  endif()
+  if(UNIX AND NOT APPLE)
+    target_compile_definitions(
+      AntTweakBar PUBLIC _UNIX __PLACEMENT_NEW_INLINE)
   endif()
   list(APPEND LIBIGL_INCLUDE_DIRS "${ANTTWEAKBAR_INCLUDE_DIR}")
   set(LIBIGL_ANTTWEAKBAR_EXTRA_LIBRARIES "AntTweakBar")
