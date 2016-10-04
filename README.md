@@ -209,6 +209,7 @@ few labs/companies/institutions using libigl:
  - ETH Zurich, [Interactive Geometry Lab](http://igl.ethz.ch/) and [Advanced Technologies Lab](http://ait.inf.ethz.ch/), Swizterland
  - George Mason University, [CraGL](http://cs.gmu.edu/~ygingold/), USA
  - [Hong Kong University of Science and Technology](http://www.ust.hk/), Hong Kong
+ - [Inria](Université Grenoble Alpes), France
  - [National Institute of Informatics](http://www.nii.ac.jp/en/), Japan
  - New York University, [Media Research Lab](http://mrl.nyu.edu/), USA
  - NYUPoly, [Game Innovation Lab](http://game.engineering.nyu.edu/), USA
@@ -224,6 +225,7 @@ few labs/companies/institutions using libigl:
  - [University of Texas at Austin](http://www.cs.utexas.edu/users/evouga/), USA
  - [University of Toronto](http://dgp.toronto.edu), Canada
  - [University of Victoria](https://www.csc.uvic.ca/Research/graphics/), Canada
+ - [University of Wisconsin-Eau Claire](http://www.uwec.edu/computer-science/), USA
  - [Università della Svizzera Italiana](http://www.usi.ch/en), Switzerland
  - [Université Toulouse III Paul Sabatier](http://www.univ-tlse3.fr/), France
  - [Zhejiang University](http://www.math.zju.edu.cn/cagd/), China
