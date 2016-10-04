@@ -41,6 +41,11 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}")
 #  list(APPEND LIBIGL_DEFINITIONS "${OpenMP_CXX_FLAGS}")
 #endif()
 
+#if(APPLE)
+#  SET(CMAKE_CXX_COMPILER  "/usr/bin/clang")
+#  SET(CMAKE_C_COMPILER  "/usr/bin/clang")
+#endif(APPLE)
+
 
 ### Compiling libraries based on chosen options ###
 set(LIBIGL_INCLUDE_DIRS "")
@@ -494,5 +499,6 @@ if(NOT ${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME})
   print_list("libigl includes" "${LIBIGL_INCLUDE_DIRS}")
   print_list("libigl libraries" "${LIBIGL_LIBRARIES}")
   print_list("libigl extra libraries" "${LIBIGL_EXTRA_LIBRARIES}")
+  print_list("libigl viewer extra libraries" "${LIBIGL_VIEWER_EXTRA_LIBRARIES}")
   print_list("libigl definitions" "${LIBIGL_DEFINITIONS}")
 endif()
